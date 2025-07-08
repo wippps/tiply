@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     compatibilityVersion: 4,
   },
 
-  extends: ["app/modules/home"],
+  extends: ["app/modules/home", "app/modules/donation"],
 
   css: ["./app/assets/styles/main.scss"],
 
