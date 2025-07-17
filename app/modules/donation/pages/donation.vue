@@ -1,3 +1,7 @@
+<script setup>
+import Target from "../components/Target.vue"
+</script>
+
 <template>
     <div class="donation">
         <div class="donation__content container">
@@ -59,6 +63,10 @@
                         <div class="donation__content-needed"></div>
                     </div>
                 </div>
+                <Target />
+            </div>
+            <div class="donation__content-right">
+                <PayForm />
             </div>
         </div>
     </div>

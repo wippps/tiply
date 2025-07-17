@@ -9,7 +9,7 @@ export default defineNuxtConfig({
 
   extends: ["app/modules/home", "app/modules/donation"],
 
-  css: ["./app/assets/styles/main.scss"],
+  css: ["./app/assets/styles/fonts.css", "./app/assets/styles/main.scss",],
 
   modules: ["@nuxt/icon", "@nuxt/image"],
 });
