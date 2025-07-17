@@ -32,14 +32,32 @@
                             </div>
                         </div>
                     </div>
+                    <div class="donation__content-comment">
+                        <p class="donation__content-commentText">
+                            Raxmat akalar podderjka qvotganila uchun 
+                        </p>
+                        <button class="donation__content-commentBtn">
+                            @chingiz_ogo
+                        </button>
+                    </div>
                 </div>
-                <div class="donation__content-comment">
-                    <p class="donation__content-commentText">
-                        Raxmat akalar podderjka qvotganila uchun 
-                    </p>
-                    <button class="donation__content-commentBtn">
-                        @chingiz_ogo
-                    </button>
+                <div class="donation__content-target">
+                    <h2 class="donation__content-targetTitle">
+                        Цель набора:
+                    </h2>
+                    <h2 class="donation__content-targetHeadphones">
+                        Наушники Xyper X PRO LINE.toUpperCase
+                    </h2>
+                    <div class="donation__content-targetCircle">
+                        <p class="donation__content-targetText">
+                            Собрано
+                        </p>
+                        <p class="donation__content-targetText">
+                            Нужно собрать
+                        </p>
+                        <div class="donation__content-collected"></div>
+                        <div class="donation__content-needed"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -119,6 +137,28 @@
             position: absolute;
             bottom: -10%;
             color: #fff;
+        }
+
+        &-targetTitle{
+            font-family: 'Montserrat';
+            font-weight: 700;
+            font-size: 30px;
+            color: #42444D;
+        }
+
+        &-targetHeadphones{
+            font-family: 'Montserrat';
+            font-weight: 700;
+            font-size: 16px;
+            color: #FF5631;
+            
+        }
+
+        &-targetCircle{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
         }
     }
 }
