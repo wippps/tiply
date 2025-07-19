@@ -114,7 +114,7 @@
 .footer__content-title{
   text-align: end;
   font-family: var(--MSB600);
-  font-size: 20px;
+  font-size: 18px;
   color: #ffff;
   width: 25%;
 }

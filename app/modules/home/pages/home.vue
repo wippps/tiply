@@ -309,7 +309,7 @@ padding: 15px 40px;
 border: none;
 border-radius: 20px;
 font-family: var(--MB700);
-font-size: 37.99px;
+font-size: 36px;
 text-transform: uppercase;
 background: #42444d;
 color: #fff;

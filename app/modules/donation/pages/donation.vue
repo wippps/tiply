@@ -45,24 +45,6 @@ import Target from "../components/Target.vue"
                         </button>
                     </div>
                 </div>
-                <div class="donation__content-target">
-                    <h2 class="donation__content-targetTitle">
-                        Цель набора:
-                    </h2>
-                    <h2 class="donation__content-targetHeadphones">
-                        Наушники Xyper X PRO LINE.toUpperCase
-                    </h2>
-                    <div class="donation__content-targetCircle">
-                        <p class="donation__content-targetText">
-                            Собрано
-                        </p>
-                        <p class="donation__content-targetText">
-                            Нужно собрать
-                        </p>
-                        <div class="donation__content-collected"></div>
-                        <div class="donation__content-needed"></div>
-                    </div>
-                </div>
                 <Target />
             </div>
             <div class="donation__content-right">
