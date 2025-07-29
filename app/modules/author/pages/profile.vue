@@ -1,5 +1,6 @@
 <template>
     <div class="profile">
+        <ProfilePhoto />
         <div class="profile__content container">
             <UserDonation />
             <SettingDonation />

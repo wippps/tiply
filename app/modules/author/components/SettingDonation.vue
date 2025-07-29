@@ -5,6 +5,7 @@ const isAnonymous = ref(false)
 const payCommission = ref(false)
 const rangeValue = ref(100);
 const rangeInput = ref(null);
+const active = ref(false)
 
 const updateValue = (e) => {
   rangeValue.value = e.target.value;
@@ -24,6 +25,10 @@ const toggleAnonymous = () => {
 
 const toggleCommission = () => {
     payCommission.value = !payCommission.value;
+}
+
+const toggleActive = () => {
+    active.value = !active.value;
 }
 
 </script>
@@ -119,6 +124,98 @@ const toggleCommission = () => {
                             <p class="setting__content-checkboxText">
                                 Заполнять изображением все пространство фона
                             </p>
+                        </div>
+                    </div>
+                    <div class="setting__content-qr">
+                        <h2 class="setting__content-qrTitle">
+                            QR-код
+                        </h2>
+                        <p class="setting__content-qrText">
+                            Ваши зрители автоматически попадут на вашу страницу отправки сообщений после сканирования этого QR-кода.
+                        </p>
+                        <div class="setting__content-qrImage">
+                            <img src="@/assets/images/author/settings/qr.png" alt="" class="setting__content-qrImg">
+                            <div class="setting__content-qrBtns">
+                                <button class="setting__content-qrBtn">
+                                    Скачать PNG картинку кода
+                                </button>
+                                <button class="setting__content-qrBtn">
+                                    Копировать URL картинки кода
+                                </button>
+                            </div>
+                        </div>
+                        <div class="setting__content-handler">
+                            <button class="setting__content-qrReset">
+                                <img src="@/assets/images/author/settings/setting.png" alt="">
+                                Сбросить
+                            </button>
+                            <button class="setting__content-qrSave">
+                                <img src="@/assets/images/author/settings/true.png" alt="">
+                                Сохранить
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <CopyLink type="alert"/>
+                <p class="warning">
+                    Никому не показывайте ссылку!
+                </p>
+                <div class="setting__content-events">
+                    <div class="setting__content-event">
+                        <h3 class="setting__content-title">
+                            Событие 1
+                        </h3>
+                        <div class="setting__content-eventRedact">
+                            <img src="@/assets/images/author/settings/fon.png" alt="" class="setting__content-eventImg">
+                            <div class="setting__content-eventTools">
+                                <div class="setting__content-eventTime">
+                                    <p class="setting__content-eventText">
+                                        8 сек
+                                    </p>
+                                    <div class="setting__content-eventCheckbox" 
+                                        :class="{ active: active }"
+                                        @click="toggleActive"
+                                    >
+                                        <div class="setting__content-eventCircle"></div>
+                                    </div>
+                                    <p class="setting__content-checkboxText">
+                                        Выкл
+                                    </p>
+                                </div>
+                                <div class="setting__content-volume">
+                                    <div class="setting__content-volumeCount">
+                                        <p class="setting__content-eventText">
+                                            от 0
+                                        </p>
+                                        <button class="setting__content-volumeBtn">
+                                            <img src="@/assets/images/author/settings/volume.png" alt="">
+                                        </button>
+                                    </div>
+                                    <div class="setting__content-eventBtns">
+                                        <button class="settibg__content-eventHandler">
+                                            <img src="@/assets/images/author/settings/setting.png" alt="">
+                                        </button>
+                                        <button class="settibg__content-eventHandler">
+                                            <img src="@/assets/images/author/settings/play.png" alt="">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="setting__content-addEvent">
+                        <h3 class="setting__content-eventTitle">
+                            Событие
+                        </h3>
+                        <div class="setting__content-add">
+                            <div class="setting__content-addTools">
+                                <button class="setting__content-addBtn">
+                                    <img src="" alt="">
+                                </button>
+                                <h4 class="setting__content-addTitle">
+                                    Добавить еще
+                                </h4>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -283,6 +380,9 @@ const toggleCommission = () => {
         
         &-form{
             margin-top: 44px;
+            display: flex;
+            gap: 60px;
+            margin-bottom: 60px;
         }
 
         &-formTitle{
@@ -384,6 +484,170 @@ const toggleCommission = () => {
             transition: left 0.3s ease; 
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         }
+
+        &-qrTitle{
+            font-weight: 700;
+            font-size: 20px;
+            color: #42444D;
+            margin-bottom: 12px;
+        }
+
+        &-qrText{
+            font-weight: 500;
+            font-size: 10px;
+            color: #42444D99;
+        }
+
+        &-qrImage{
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin: 20px 0 25px 0;
+        }
+
+        &-qrBtns{
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        &-qrBtn{
+            padding: 9px 15px;
+            background: #FF6D4D;
+            border-radius: 5px;
+            border: none;
+
+            font-weight: 700;
+            font-size: 9px;
+            color: #FFFFFF;
+            width: 80%;
+        }
+
+        &-handler{
+            display: flex;
+            gap: 10px;
+        }
+
+        &-qrReset{
+            padding: 6px 8px;
+            max-width: 126px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            
+            font-weight: 700;
+            font-size: 12px;
+            color: #fff;
+            background: #FF6D4D;
+            border-radius: 5px;
+            border: none;
+        }
+
+        &-qrSave{
+            padding: 6px 8px;
+            max-width: 126px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            
+            font-weight: 700;
+            font-size: 12px;
+            color: #fff;
+            background: #42444D;
+            border-radius: 5px;
+            border: none;
+        }
+
+        &-events{
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+        }
+
+        &-event{
+            padding: 15px 16px;
+            background: #D9D9D94F;
+            border-radius: 10px;
+            width: 45%;
+        }
+
+        &-title{
+            font-weight: 700;
+            font-size: 10px;
+            color: #42444D;
+            margin-bottom: 8px;
+        }
+
+        &-eventRedact{
+            padding: 11px;
+            display: flex;
+            background: #fff;
+            border-radius: 10px;
+            background-size: cover;
+        }
+
+        &-eventImg{
+            width: 95px;
+            height: 95px;
+        }
+
+        &-eventTools{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 11px;
+        }
+
+        &-eventTime{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &-eventText{
+            font-size: 12px;
+            font-weight: 500;
+            color: #42444D;
+        }
+
+        &-volume{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &-eventCheckbox{
+            width: 23px;
+            height: 11px;
+            background: #D9D9D94F;
+            border-radius: 10px;
+            position: relative;
+            cursor: pointer;
+            transition: background 0.3s ease;
+
+            &.active {
+                background: #FF6D4D;
+
+                & div {left: calc(100% - 9px);}
+            }
+        }
+
+        &-eventCircle{
+            width: 8px;
+            height: 8px;
+            background: #fff;
+            border-radius: 50%;
+            position: absolute;
+            left: 2px; 
+            top: 1px;
+            transition: left 0.3s ease; 
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
     }
+}
+.warning{
+    font-weight: 500;
+    font-size: 10px;
+    color: #FF5631;
 }
 </style>
