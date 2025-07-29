@@ -1,4 +1,5 @@
 <script setup>
+import { CopyLink } from '#components';
 import { ref } from 'vue';
 
 const isAnonymous = ref(false)
@@ -6,6 +7,7 @@ const payCommission = ref(false)
 const rangeValue = ref(100);
 const rangeInput = ref(null);
 const active = ref(false)
+const modaration = ref(false)
 
 const updateValue = (e) => {
   rangeValue.value = e.target.value;
@@ -29,6 +31,10 @@ const toggleCommission = () => {
 
 const toggleActive = () => {
     active.value = !active.value;
+}
+
+const toggleModeration = () => {
+    modaration.value = !modaration.value;
 }
 
 </script>
@@ -226,11 +232,92 @@ const toggleActive = () => {
                         Проводить модерацию через @Tirikchilikdonatbot
                     </p>
                     <div class="setting__content-checkboxBtn" 
-                        :class="{ active: active }"
-                        @click="toggleActive"
+                        :class="{ active: modaration }"
+                        @click="toggleModeration"
                     >
                         <div class="setting__content-circle"></div>
                     </div>
+                </div>
+                <CopyLink type="widget" />
+            </div>
+            <div class="notification">
+                <div class="notification__inputs">
+                    <label class="input__label" for="">Тип данных</label>
+                    <input class="input__field top__donations" type="text" placeholder="Топ донаты">
+                    <label class="input__label" for="">Период</label>
+                    <input class="input__field last__days" type="text" placeholder="За 7 дней">
+                    <label class="input__label" for="">Топ донатер</label>
+                    <div class="donate__inputs">
+                        <input class="input__field donate__input" type="number" placeholder="5000">
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="displayMethod">
+                    <label class="input__label" for="">Способ отображения</label>
+                    <input class="input__field method" type="text" placeholder="Список">
+                    <label class="input__label" for="">Максимальное кол-во донатеров</label>
+                    <input class="input__field max" type="number" placeholder="10">
+                    <label class="input__label" for="">Длительность анимации</label>
+                    <div class="input-wrapper">
+                        <input type="number" value="3" min="0" />
+                        <span>сек</span>
+                    </div>
+                </div>
+            </div>
+            <div class="setting__text">
+                <h2 class="setting__text-title">
+                    Текст
+                </h2>
+                <div class="setting__text-fonts">
+                    <div class="setting__text-font">
+                        <p class="setting__text-text">
+                            Стиль заголовка
+                        </p>
+                        <div class="setting__text-fontStyle">
+                            <button class="setting__text-fontBtn">
+                                а
+                            </button>
+                            <p class="setting__text-fontText">
+                                Стилизовать шрифт
+                            </p>
+                        </div>
+                    </div>
+                     <div class="setting__text-font">
+                        <p class="setting__text-text">
+                            Стиль донатеров
+                        </p>
+                        <div class="setting__text-fontStyle">
+                            <button class="setting__text-fontBtn">
+                                а
+                            </button>
+                            <p class="setting__text-fontText">
+                                Стилизовать шрифт
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="setting__text-donat">
+                    <img src="@/assets/images/author/settings/fon.png" alt="" class="setting__text-back">
+                    <h3 class="setting__text-example">
+                        Anonymus - 5000 NickName - 5000 Test - 20000
+                    </h3>
+                </div>
+                <div class="setting__text-btns">
+                    <button class="setting__text-btn orange">
+                        <img src="@/assets/images/author/settings/setting.png" alt="">
+                        Сбросить
+                    </button>
+                    <button class="setting__text-btn black">
+                        <img src="@/assets/images/author/settings/true.png" alt="">
+                        Сохранить
+                    </button>
+                    <button class="setting__text-btn grey">
+                        <img src="@/assets/images/author/settings/play.png" alt="">
+                        Посмотреть
+                    </button>
                 </div>
             </div>
         </div>
@@ -577,13 +664,14 @@ const toggleActive = () => {
             margin-top: 20px;
             display: flex;
             gap: 15px;
+            justify-content: space-between;
         }
 
         &-event{
             padding: 15px 16px;
             background: #D9D9D94F;
             border-radius: 10px;
-            width: 45%;
+            width: 47%;
         }
 
         &-title{
@@ -719,7 +807,7 @@ const toggleActive = () => {
             padding: 15px 16px;
             background: #D9D9D94F;
             border-radius: 10px;
-            width: 45%;
+            width: 47%;
         }
 
         &-add{
@@ -746,11 +834,249 @@ const toggleActive = () => {
             font-weight: 500;
             color: #42444D99;
         }
+
+        &-moderation{
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        &-moderationText{
+            margin-top: 15px;
+            color: #FF5631;
+            margin-right: 5px;
+            margin-bottom: 80px;
+        }
+    }
+
+    &__text{
+        width: 60%;
+
+        &-title{
+            font-weight: 700;
+            font-size: 15px;
+            color: #42444D;
+            margin-bottom: 15px;
+        }
+
+        &-fonts{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        &-text{
+            font-weight: 500;
+            font-size: 13px;
+            color: #42444D;
+            margin-bottom: 7px;
+        }
+
+        &-fontStyle{
+            display: flex;
+            gap: 4px;
+            text-align: center;
+            align-items: center;
+        }
+        
+        &-fontBtn{
+            padding: 0 3px;
+            background: #FF6D4D;
+            border-radius: 3px;
+
+            font-weight: 500;
+            font-size: 13px;
+            color: #FFFFFF;
+            border: none;
+            text-align: center;
+            height: 17px;
+        }
+
+        &-fontText{
+            font-weight: 500;
+            font-size: 10px;
+            color: #42444D;
+        }
+
+        &-donat{
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        &-back{
+            z-index: -1;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 321px;
+            height: 158px;
+        }
+
+        &-example{
+            position: absolute;
+            top: 25%;
+            left: 17%;
+            width: 200px;
+
+            font-size: 20px;
+            color: #FF5631;
+            text-align: center;
+        }
+        
+        &-btns{
+            display: flex;
+            gap: 8px;
+        }
+
+        &-btn{
+            width: 100px;
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+            display: flex;
+            gap: 5px;
+            align-items: center;
+
+            font-weight: 700;
+            font-size: 10px;
+            color: #fff;
+
+            & img{
+                width: 19px;
+                height: 19px;
+            }
+
+            &.grey{
+                background: #42444DDB;
+            }
+            
+            &.black{
+                background: #42444D;
+            }
+
+            &.orange{
+                background: #FF6D4D;
+            }
+        }
     }
 }
 .warning{
     font-weight: 500;
     font-size: 10px;
     color: #FF5631;
+}
+.notification {
+    display: flex;
+    gap: 15px;
+    margin: 30px 0;
+
+    &__inputs {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.switch {
+    position: relative;
+    width: 40px;
+    height: 19px;
+
+    & input {
+        opacity: 0;
+        width: 0px;
+        height: 0;
+    }
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 999px;
+    transition: 0.3s;
+
+    &::before{
+        content: "";
+        position: absolute;
+        height: 17px;
+        width: 17px;
+        left: 1px;
+        top: 1px;
+        background-color: white;
+        border-radius: 50%;
+        transition: 0.3s;
+    }
+
+    &:checked+.slider {
+        background-color: #4caf50;
+
+    }
+
+    &:checked+.slider::before {
+        transform: translateX(21px);
+
+    }
+}
+
+.input__label {
+    font-weight: 700;
+    font-size: 15px;
+    color: #42444D;
+    line-height: 100%;
+    margin-bottom: 7px;
+}
+
+.input__field,.input-wrapper {
+    border: 1px solid #00000033;
+    border-radius: 5px;
+    font-size: 12px;
+    line-height: 100%;
+    padding: 10px 0 10px 12px;
+    outline: none;
+}
+
+.top__donations,
+.last__days,
+.method,
+.max {
+    margin-bottom: 13px;
+}
+
+.donate__inputs {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+}
+
+.donate__input {
+    max-width: 145px;
+    width: 100%;
+}
+
+.displayMethod {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-wrapper span {    
+    color: #888;
+    margin-right: 15px;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+}
+
+.input-wrapper input {
+    border: none;
+    outline: none;
 }
 </style>

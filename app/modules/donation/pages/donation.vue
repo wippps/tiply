@@ -1,5 +1,11 @@
+<script setup lang="ts">
+import ProfilePhoto from '~/components/ProfilePhoto.vue';
+
+</script>
+
 <template>
     <div class="donation">
+        <ProfilePhoto />
         <div class="donation__content container">
             <UserDonation />
             <div class="donation__content-right">
