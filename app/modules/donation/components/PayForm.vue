@@ -125,6 +125,7 @@ const formatCardDate = () => {
                     class="pay__register-textarea" 
                     placeholder="Введите сообщение к донату"
                     v-model="message"
+                    maxlength="100"
                 ></textarea>
                 <p class="pay__register-limit">
                     <span>{{ message.length }}</span>/100
