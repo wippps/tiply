@@ -172,15 +172,17 @@ const toggleActive = () => {
                                     <p class="setting__content-eventText">
                                         8 сек
                                     </p>
-                                    <div class="setting__content-eventCheckbox" 
-                                        :class="{ active: active }"
-                                        @click="toggleActive"
-                                    >
-                                        <div class="setting__content-eventCircle"></div>
+                                    <div class="setting__content-eventCheck"> 
+                                        <div class="setting__content-eventCheckbox" 
+                                            :class="{ active: active }"
+                                            @click="toggleActive"
+                                        >
+                                            <div class="setting__content-eventCircle"></div>
+                                        </div>
+                                        <p class="setting__content-eventTurn">
+                                            Выкл
+                                        </p>
                                     </div>
-                                    <p class="setting__content-checkboxText">
-                                        Выкл
-                                    </p>
                                 </div>
                                 <div class="setting__content-volume">
                                     <div class="setting__content-volumeCount">
@@ -192,10 +194,10 @@ const toggleActive = () => {
                                         </button>
                                     </div>
                                     <div class="setting__content-eventBtns">
-                                        <button class="settibg__content-eventHandler">
+                                        <button class="setting__content-eventHandler">
                                             <img src="@/assets/images/author/settings/setting.png" alt="">
                                         </button>
-                                        <button class="settibg__content-eventHandler">
+                                        <button class="setting__content-eventPlay">
                                             <img src="@/assets/images/author/settings/play.png" alt="">
                                         </button>
                                     </div>
@@ -204,19 +206,30 @@ const toggleActive = () => {
                         </div>
                     </div>
                     <div class="setting__content-addEvent">
-                        <h3 class="setting__content-eventTitle">
+                        <h3 class="setting__content-title">
                             Событие
                         </h3>
                         <div class="setting__content-add">
                             <div class="setting__content-addTools">
                                 <button class="setting__content-addBtn">
-                                    <img src="" alt="">
+                                    <img src="@/assets/images/author/settings/plus.png" alt="">
                                 </button>
                                 <h4 class="setting__content-addTitle">
                                     Добавить еще
                                 </h4>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="setting__content-moderation">
+                    <p class="setting__content-moderationText">
+                        Проводить модерацию через @Tirikchilikdonatbot
+                    </p>
+                    <div class="setting__content-checkboxBtn" 
+                        :class="{ active: active }"
+                        @click="toggleActive"
+                    >
+                        <div class="setting__content-circle"></div>
                     </div>
                 </div>
             </div>
@@ -598,6 +611,7 @@ const toggleActive = () => {
             flex-direction: column;
             justify-content: space-between;
             padding: 11px;
+            width: 100%;
         }
 
         &-eventTime{
@@ -614,6 +628,13 @@ const toggleActive = () => {
         &-volume{
             display: flex;
             justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        &-eventCheck{
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
         &-eventCheckbox{
@@ -642,6 +663,88 @@ const toggleActive = () => {
             top: 1px;
             transition: left 0.3s ease; 
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        &-eventTurn{
+            font-weight: 500;
+            font-size: 12px;
+            color: #42444D;
+        }
+
+        &-volumeBtn{
+            padding: 3px;
+            background: #42444D99;
+            border-radius: 3px;
+            border: none;
+            display: flex;
+            align-items: center;
+        }
+
+        &-eventBtns{
+            display: flex;
+            gap: 4px;
+        }
+
+        &-eventHandler{
+            padding: 3px;
+            background: #42444D99;
+            border-radius: 3px;
+            border: none;
+            display: flex;
+            align-items: center;
+            height: 18px;
+
+            & img{
+                width: 12px;
+                height: 12px;
+            }
+        }
+
+        &-eventPlay{
+            padding: 3px;
+            background: #FF5631;
+            border-radius: 3px;
+            border: none;
+            display: flex;
+            align-items: center;
+            height: 18px;
+
+            & img{
+                width: 12px;
+                height: 12px;
+            }
+        }
+
+        &-addEvent{
+            padding: 15px 16px;
+            background: #D9D9D94F;
+            border-radius: 10px;
+            width: 45%;
+        }
+
+        &-add{
+            border: 1px dashed #00000033;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            height: 85%;
+        }
+
+        &-addTools{
+            display: flex;
+            gap: 7px;
+            align-items: center;
+        }
+
+        &-addBtn{
+            background: none;
+            border: none;
+        }
+
+        &-addTitle{
+            font-weight: 500;
+            color: #42444D99;
         }
     }
 }
