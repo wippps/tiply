@@ -2,19 +2,19 @@
   <header class="header">
       <nav class="header__nav">
           <div class="header__nav-content container">
-              <div class="header__nav-logoBox">
+              <NuxtLink to="/" class="header__nav-logoBox">
                   <img src="@/assets/images/header/logo.png" alt="" class="header__nav-logo">
-              </div>
+              </NuxtLink>
               <div class="header__nav-right">
                   <button class="header__nav-langBtn">
                     EN
                   </button>
-                  <button class="header__nav-signBtn">
+                  <NuxtLink to="/login" class="header__nav-signBtn">
                       <img src="@/assets/images/header/exitIcon.png" alt="" class="header__nav-icon">
                       <p class="header__nav-text">
                         SIGN UP
                       </p>
-                  </button>
+                  </NuxtLink>
               </div>
           </div>
       </nav>
