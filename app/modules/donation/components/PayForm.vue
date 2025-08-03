@@ -120,17 +120,12 @@ const formatCardDate = () => {
                     {{ amount }} <span>UZS</span>
                 </button>
             </div>
-            <div class="pay__register-message">
-                <textarea 
-                    class="pay__register-textarea" 
-                    placeholder="Введите сообщение к донату"
-                    v-model="message"
-                    maxlength="100"
-                ></textarea>
-                <p class="pay__register-limit">
-                    <span>{{ message.length }}</span>/100
-                </p>
-            </div>
+            <Message 
+                v-model="message"
+                mode="user"
+                placeholder="Введите сообщение к донату"
+                :max-length="100"
+            />
         </div>
         <div class="pay__type">
             <h3 class="pay__type-title">

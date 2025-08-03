@@ -1,9 +1,13 @@
+<script setup>
+import SettingProfile from '../components/SettingProfile.vue';
+</script>
+
 <template>
     <div class="profile">
         <ProfilePhoto />
         <div class="profile__content container">
             <UserDonation />
-            <SettingDonation />
+            <SettingProfile />
         </div>
     </div>
 </template>

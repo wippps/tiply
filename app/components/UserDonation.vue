@@ -40,6 +40,23 @@
                             @chingiz_ogo
                         </button>
                     </div>
+                    <div class="donation__content-all">
+                        <div class="donation__content-allTitle">
+                            <h2>
+                                Всего собрано
+                            </h2>
+                            <img src="@/assets/images/components/person.png" alt="">
+                            <p>
+                                254
+                            </p>
+                        </div>
+                        <h2 class="donation__content-allGeted">
+                            2 742 856,06 UZS
+                        </h2>
+                        <p class="donation__content-warning">
+                            Здесь показано сколько собрано донатов за весь период. Собранные средства отправляются на ваш счет в приложении Multicard.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -70,6 +87,7 @@
 .user{
     display: flex;
     flex-direction: column;
+    width: 36%;
 }
 .donation{
     &__content{
@@ -124,6 +142,7 @@
             border: 1px solid #00000033;
             border-radius: 20px;
             position: relative;
+            width: 79%;
         }
 
         &-commentText{
@@ -162,6 +181,44 @@
             justify-content: center;
             align-items: center;
             margin: 20px;
+        }
+
+        &-all{
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 65px;
+            width: 79%;
+        }
+
+        &-allTitle{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            & p{
+                font-size: 15px;
+                color: #42444D;
+                font-weight: 500;
+            }   
+
+            & h2{
+                font-weight: 500;
+                font-size: 30px;
+                color: #42444D;
+            }
+        }
+
+        &-allGeted{
+            font-weight: 800;
+            font-size: 35px;
+            color: #42444D;
+        }
+
+        &-warning{
+            font-size: 10px;
+            font-weight: 500;
+            color: #00000040;
         }
     }
 }

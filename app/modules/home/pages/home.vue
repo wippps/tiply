@@ -20,18 +20,18 @@
                 <div class="hero__content-infoBottom">
                     <div class="hero__content-donat">
                         <p class="hero__content-donatsNumber">
-                        1 560 720 000
+                          1 560 720 000
                         </p>
                         <p class="hero__content-subText">
-                        Отправлено донатов
+                          Отправлено донатов
                         </p>
                     </div>
                     <div class="hero__content-strimer">
                         <p class="hero__content-strimersNumber">
-                        120
+                          120
                         </p>
                         <p class="hero__content-subText">
-                        Стримеров
+                          Стримеров
                         </p>
                     </div>
                 </div> 
@@ -84,23 +84,23 @@
         </div>
     </section>
     <section class="main__strimers">
-        <div class="main__strimers-content container-fluid">
-            <div class="strimers__content-head">
-                <div class="strimers__content-searchBox">
-                    <p class="strimers__content-text">
-                        Найти своего любимого стримера
-                    </p>
-                    <input type="search" class="strimers__content-search">
-                </div>
-                <button class="strimers__content-btn">
-                    найти
-                </button>
-            </div>
-            <div class="strimers__content-cards">
-              <card />
-            </div>
-        </div>
-    </section>
+      <div class="main__strimers-content container-fluid">
+          <div class="strimers__content-head">
+              <div class="strimers__content-searchBox">
+                  <p class="strimers__content-text">
+                    Найти своего любимого стримера
+                  </p>
+                  <input type="search" class="strimers__content-search">
+              </div>
+              <button class="strimers__content-btn">
+                найти
+              </button>
+          </div>
+          <div class="strimers__content-cards">
+            <card />
+          </div>
+      </div>
+  </section>
 </template>
 
 <style scoped>
